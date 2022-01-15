@@ -1,0 +1,61 @@
+const PORT = 6600
+const axios = require('axios')
+const express = require('express')
+const cheerio = require('cheerio')
+
+const app = express()
+
+const article = []
+
+const sources = [
+  {
+    address: 'https://old.reddit.com/r/LaptopDeals/new/',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=25&after=t3_s30zwj',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=50&after=t3_s1s0pl',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=75&after=t3_s0de14',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=100&after=t3_rz7xco',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=125&after=t3_rxhehi',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=150&after=t3_rvx44h',
+  },
+  {address: 'https://old.reddit.com/r/LaptopDeals/new/?count=175&after=t3_ruh56o'}
+]
+
+sources.forEach((source) => {
+  axios.get(source.address).then((response) => {
+    const html = response.data
+    const $ = cheerio.load(html)
+
+    $('a:contains("$")', html).each(function () {
+      const Title = $(this).text()
+      const URL = $(this).attr('href')
+      article.push({
+        Title,
+        URL
+      })
+    })
+  })
+})
+
+app.get('/', function (req, res) {
+  res.json(article)
+})
+
+app.listen(PORT, () => console.log(`Server opened at PORT ${PORT}`))
