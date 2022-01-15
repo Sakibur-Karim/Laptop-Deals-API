@@ -1,4 +1,4 @@
-const PORT = 6600
+const PORT = process.env.PORT || 6600
 const axios = require('axios')
 const express = require('express')
 const cheerio = require('cheerio')
@@ -35,7 +35,30 @@ const sources = [
     address:
       'https://old.reddit.com/r/LaptopDeals/new/?count=150&after=t3_rvx44h',
   },
-  {address: 'https://old.reddit.com/r/LaptopDeals/new/?count=175&after=t3_ruh56o'}
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=175&after=t3_ruh56o',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=200&after=t3_rsucgn',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=225&after=t3_rrtlfk',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=250&after=t3_rqdpcp',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=275&after=t3_rnm7aw',
+  },
+  {
+    address:
+      'https://old.reddit.com/r/LaptopDeals/new/?count=300&after=t3_rmfmxf',
+  },
 ]
 
 sources.forEach((source) => {
@@ -48,7 +71,7 @@ sources.forEach((source) => {
       const URL = $(this).attr('href')
       article.push({
         Title,
-        URL
+        URL,
       })
     })
   })
