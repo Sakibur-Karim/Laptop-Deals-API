@@ -4,9 +4,9 @@ const express = require('express')
 const cheerio = require('cheerio')
 
 const app = express()
-const article = []
+const sources = []
 
-const sources = [
+const urls = [
   {
     address: 'https://old.reddit.com/r/LaptopDeals/new/',
   },
@@ -60,15 +60,15 @@ const sources = [
   },
 ]
 
-sources.forEach((source) => {
-  axios.get(source.address).then((response) => {
+urls.forEach((url) => {
+  axios.get(url.address).then((response) => {
     const html = response.data
     const $ = cheerio.load(html)
 
     $('a:contains("$")', html).each(function () {
       const Title = $(this).text()
-      const URL = $(this).attr('href')
-      article.push({
+      const Link = $(this).attr('href')
+      sources.push({
         Title,
         Link,
       })
@@ -77,7 +77,7 @@ sources.forEach((source) => {
 })
 
 app.get('/', function (req, res) {
-  res.json(article)
+  res.json(sources)
 })
 
 app.listen(PORT, () => console.log(`Server opened at PORT ${PORT}`))
