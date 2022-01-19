@@ -66,11 +66,11 @@ urls.forEach((url) => {
     const $ = cheerio.load(html)
 
     $('a:contains("$")', html).each(function () {
-      const Title = $(this).text()
-      const Link = $(this).attr('href')
+      const title = $(this).text()
+      const url = $(this).attr('href')
       sources.push({
-        Title,
-        Link,
+        title,
+        url,
       })
     })
   })
