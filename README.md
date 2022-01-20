@@ -1,5 +1,5 @@
 # Latest Laptop Deals API
 
-Check out the API in action at RapidAPI! https://rapidapi.com/Sakibur-Karim/api/latest-laptop-deals/
+Check out the API in action at RapidAPI.com! https://rapidapi.com/Sakibur-Karim/api/latest-laptop-deals/
 
-Planning to buy a new laptop but want to save as much money as you can? Look no further! From gaming laptop to general or productivity use, this API will get the latest available laptop deals for you.
+This is an API which will extract laptop deals currently available around the internet (via Reddit). Whether you are looking for a general use laptop, productivity or gaming laptop, this API can save you hundreds of money and help you find your next favorite laptop!
