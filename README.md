@@ -6,7 +6,7 @@ Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-lapto
 
 ## How to run the program
 
-- Clone the repository
+- Clone git repository
 - Install the dependencies using this command<br />
 <pre>npm i</pre>
 - Run using this command<br />
