@@ -8,7 +8,7 @@ Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-lapto
 
 - Clone the repository
 - Install the dependencies using this command<br />
-<pre>$ npm i</pre>
+<pre>npm i</pre>
 - Run using this command<br />
 <pre>npm start nodemon</pre>
 
