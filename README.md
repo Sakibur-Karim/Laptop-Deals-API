@@ -6,11 +6,11 @@ Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-lapto
 
 ## How to run the program
 
-Clone the repository<br />
-Install the dependencies using this command<br />
-<code>npm i</code><br />
-Run using this command<br />
-<code>npm start nodemon</code>
+- Clone the repository
+- Install the dependencies using this command<br />
+<pre>npm i</pre><br />
+- Run using this command<br />
+<pre>npm start nodemon</pre>
 
 ## Tools & Technologies
 
