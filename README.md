@@ -4,6 +4,14 @@ This is an API I made out of curiosity, as I love (gaming) laptops and even brow
 
 Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-laptop-deals/
 
+## How to run the program
+
+Clone the repository
+Install the dependencies using this command__
+<code>npm i</code>
+Run using this command__
+<code>npm start nodemon</code>
+
 ## Tools & Technologies
 
 - JavaScript
