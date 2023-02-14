@@ -2,7 +2,7 @@
 
 This is an API I made out of curiosity, as I love (gaming) laptops and even browsing for them makes me happy. I deployed the program using Heroku and then publicly hosted at RapidAPI.com.
 
-Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-laptop-deals/
+Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-laptop-deals1/
 
 ## How to run the program
 
