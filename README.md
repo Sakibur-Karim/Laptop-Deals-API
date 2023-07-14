@@ -10,7 +10,7 @@ Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-lapto
 - Install the dependencies using this command<br />
 <pre>npm i</pre>
 - Run using this command<br />
-<pre>npm start nodemon</pre>
+<pre>npm start node</pre>
 
 ## Tools & Technologies
 
