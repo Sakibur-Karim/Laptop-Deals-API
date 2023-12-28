@@ -19,7 +19,6 @@ Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-lapto
 - Express.js
 - Axios.js
 - Cheerio.js
-- Heroku
 - RapidAPI
 - Git/GitHub
 
