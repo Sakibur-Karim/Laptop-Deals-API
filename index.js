@@ -3,7 +3,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const app = express();
-const redditUrl = 'https://old.reddit.com/r/LaptopDeals/new/';
+const redditUrl = 'https://www.reddit.com/r/LaptopDeals/';
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "https://old.reddit.com/r/LaptopDeals/new/"); // Replace "*" with your specific allowed origins
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
