@@ -1,50 +1,36 @@
 const express = require('express');
-const cors = require('cors'); // Import the cors module
-
+const axios = require('axios');
 const cheerio = require('cheerio');
-const axios = require('axios').default.create({ // Create a new Axios instance with adjusted settings
-  // Add these options if needed (consult documentation for details):
-  // baseURL: 'https://api.example.com/', // Base URL for all requests (optional)
-  // httpsAgent: agent // Custom https agent (optional)
-});
+
 const app = express();
-app.use(cors());
-const sources = [];
+const redditUrl = 'https://old.reddit.com/r/LaptopDeals/new/';
 
-const urls = [
-  {
-    address: 'https://old.reddit.com/r/LaptopDeals/new/',
-  },
-];
+app.get('/', async (req, res) => {
+    try {
+        // Fetch the Reddit page
+        const response = await axios.get(redditUrl);
+        const html = response.data;
 
-// Use async/await for cleaner error handling
-async function fetchDeals() {
-  try {
-    for (const urlObj of urls) {
-      const response = await axios.get(urlObj.address);
-      const html = response.data;
-      const $ = cheerio.load(html);
+        // Parse the HTML using Cheerio
+        const $ = cheerio.load(html);
 
-      $('a:contains("$")', html).each(function () {
-        const title = $(this).text();
-        const url = $(this).attr('href');
-        sources.push({
-          title,
-          url,
+        // Extract post titles and links
+        const posts = [];
+        $('.thing').each((index, element) => {
+            const title = $(element).find('.title').text().trim();
+            const link = $(element).find('.title a').attr('href');
+            posts.push({ title, link });
         });
-      });
+
+        // Send the extracted data as JSON
+        res.json(posts);
+    } catch (error) {
+        console.error('Error fetching Reddit page:', error.message);
+        res.status(500).json({ error: 'Failed to fetch Reddit data' });
     }
-  } catch (error) {
-    console.error("Error fetching deals:", error);
-  }
-}
+});
 
-// Call the fetchDeals function before serving requests
-fetchDeals().then(() => {
-  app.get('/', function (req, res) {
-    res.json(sources);
-  });
-
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`Server opened at PORT ${PORT}`));
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });

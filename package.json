@@ -1,21 +1,24 @@
 {
-  "name": "api",
-  "engines": {
-    "node": "16.17.1"
-  },
+  "name": "latest-laptop-deals-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is an API I made out of curiosity, as I love (gaming) laptops and even browsing for them makes me happy. I deployed the program using Heroku and then publicly hosted at RapidAPI.com.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakibur-Karim/Latest-Laptop-Deals-API.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sakibur-Karim/Latest-Laptop-Deals-API/issues"
+  },
+  "homepage": "https://github.com/Sakibur-Karim/Latest-Laptop-Deals-API#readme",
   "dependencies": {
-    "axios": "^0.24.0",
-    "cheerio": "^1.0.0-rc.10",
-    "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+    "axios": "^1.6.8",
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.19.2"
   }
 }
