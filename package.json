@@ -1,5 +1,8 @@
 {
   "name": "latest-laptop-deals-api",
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
   "version": "1.0.0",
   "description": "This is an API I made out of curiosity, as I love (gaming) laptops and even browsing for them makes me happy. I deployed the program using Heroku and then publicly hosted at RapidAPI.com.",
   "main": "index.js",
