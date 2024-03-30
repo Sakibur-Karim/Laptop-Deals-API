@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors'); // Import the cors module
+
 const cheerio = require('cheerio');
 const axios = require('axios').default.create({ // Create a new Axios instance with adjusted settings
   // Add these options if needed (consult documentation for details):
@@ -6,6 +8,7 @@ const axios = require('axios').default.create({ // Create a new Axios instance w
   // httpsAgent: agent // Custom https agent (optional)
 });
 const app = express();
+app.use(cors());
 const sources = [];
 
 const urls = [
