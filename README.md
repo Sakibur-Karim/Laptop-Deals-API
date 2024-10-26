@@ -11,6 +11,7 @@ Link to API at RapidAPI.com: https://rapidapi.com/Sakibur-Karim/api/latest-lapto
 <pre>npm ci</pre>
 - Run using this command<br />
 <pre>npm start node</pre>
+<pre>http://localhost:3000</pre>
 
 ## Tools & Technologies
 
