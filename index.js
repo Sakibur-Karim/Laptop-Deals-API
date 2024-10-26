@@ -3,7 +3,7 @@ const axios = require('axios');
 const app = express();
 
 // Define Reddit API URL
-const redditUrl = 'https://www.reddit.com/r/LaptopDeals/new.json';
+const redditUrl = 'https://reddit.com/r/LaptopDeals/new.json';
 
 // Define middleware to set CORS headers
 app.use((req, res, next) => {
